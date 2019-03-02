@@ -1,9 +1,12 @@
 https://thonny.org
 
+https://docs.google.com/document/d/102Ubb9lqJ6PuB2pvqvhvb4vUwoQIkpSOp6ZMkLu7raw/edit
+
+
 
 http://raspberrypi.org/downloads 
 https://sourceforge.net/projects/win32diskimager/
-Библиотека адафрут
+ГЃГЁГЎГ«ГЁГ®ГІГҐГЄГ  Г Г¤Г ГґГ°ГіГІ
 sudo apt-get update
 sudo apt-get install python3-pip
 sudo python3 -m pip install --upgrade pip setuptools wheel
@@ -15,18 +18,18 @@ UART - https://www.electronicwings.com/raspberry-pi/raspberry-pi-uart-communicat
 PiPins - https://pinout.xyz
 MQTT - https://core-electronics.com.au/tutorials/getting-started-with-home-automation-using-mqtt.html (sudo pip install paho-mqtt)
 
-Датчик температуры и влажности DHT11
-Простой вариант:
-Установка гит
+Г„Г ГІГ·ГЁГЄ ГІГҐГ¬ГЇГҐГ°Г ГІГіГ°Г» ГЁ ГўГ«Г Г¦Г­Г®Г±ГІГЁ DHT11
+ГЏГ°Г®Г±ГІГ®Г© ГўГ Г°ГЁГ Г­ГІ:
+Г“Г±ГІГ Г­Г®ГўГЄГ  ГЈГЁГІ
 sudo apt-get install git-core
-Установка репо
+Г“Г±ГІГ Г­Г®ГўГЄГ  Г°ГҐГЇГ®
 git clone https://github.com/adafruit/Adafruit_Python_DHT.git
 cd Adafruit_Python_DHT
 sudo apt-get install build-essential python-dev
 sudo python setup.py install
-Создаем фаил
-sudo nano (имя файла).py
-Содержимое файла
+Г‘Г®Г§Г¤Г ГҐГ¬ ГґГ ГЁГ«
+sudo nano (ГЁГ¬Гї ГґГ Г©Г«Г ).py
+Г‘Г®Г¤ГҐГ°Г¦ГЁГ¬Г®ГҐ ГґГ Г©Г«Г 
 
 #!/usr/bin/python
 import sys
@@ -38,14 +41,14 @@ while True:
 
     print 'Temp: {0:0.1f} C  Humidity: {1:0.1f} %'.format(temperature, humidity)
 
-Сохраняем
-sudo python (имя файла).py
+Г‘Г®ГµГ°Г Г­ГїГҐГ¬
+sudo python (ГЁГ¬Гї ГґГ Г©Г«Г ).py
 Profit!
 
 
 
 
-Либа для дистануции
+Г‹ГЁГЎГ  Г¤Г«Гї Г¤ГЁГ±ГІГ Г­ГіГ¶ГЁГЁ
 #Libraries
 import RPi.GPIO as GPIO
 import time
@@ -101,7 +104,7 @@ if __name__ == '__main__':
        GPIO.cleanup()
 
 
-Финалочка 
+Г”ГЁГ­Г Г«Г®Г·ГЄГ  
 # MQTT Client demo
 # Continuously monitor two different MQTT topics for data,
 # check if the received data matches two predefined 'commands'
@@ -198,14 +201,14 @@ def on_message(client, userdata, msg):
            print("time_first_it",time_first_it)
            dif = time_second_it - time_first_it
            print("dif",dif)
-           print("Секунды = ", dif.seconds)
+           print("Г‘ГҐГЄГіГ­Г¤Г» = ", dif.seconds)
            client.publish("s1.time_past" , dif.seconds)
            #print(timmi.raznos(time_second_it,time_first_it))
            #diff = timmi.raznos(time_second_it,time_first_it)
            #client.publish("s1.time_past" , diff)
            #dif = time_second_it - time_first_it
            #print("dif",dif)
-           #print("Секунды = ", diff)
+           #print("Г‘ГҐГЄГіГ­Г¤Г» = ", diff)
           
       
       
